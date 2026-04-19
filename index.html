@@ -977,8 +977,7 @@ piso electrónico del 0.5 %.
           <span class="name">Material</span>
         </div>
         <div class="segmented" id="mat-seg">
-          <button data-mat="none" class="active none">ninguno</button>
-          <button data-mat="al">aluminio</button>
+          <button data-mat="al" class="active al">aluminio</button>
           <button data-mat="cu">cobre</button>
         </div>
       </div>
@@ -989,7 +988,7 @@ piso electrónico del 0.5 %.
         </div>
         <div class="stepper" data-stepper="thick">
           <button type="button" data-step="-1">−</button>
-          <div class="step-val"><span id="thick-val">0.0</span><span class="unit" id="thick-unit">mm</span></div>
+          <div class="step-val"><span id="thick-val">0.0</span><span class="unit" id="thick-unit">mm Al</span></div>
           <button type="button" data-step="+1">+</button>
         </div>
       </div>
@@ -1350,7 +1349,7 @@ const state = {
   sdd_cm: 100,
   colim_cm: 4,
   h_det_cm: 15,
-  material: 'none',
+  material: 'al',
   thickness_mm: 0,
   detector_type: 'ionization',  // 'ionization' | 'solid-state'
   inherent_filtration_mm: 4.605, // fijo: calibrado contra 62 puntos experimentales (7 datasets), RMSE forma <4% Al, <9% Cu
@@ -2149,12 +2148,7 @@ document.querySelectorAll('#mat-seg button').forEach(btn => {
     if(mat==='cu')   btn.classList.add('cu');
     if(mat==='none') btn.classList.add('none');
     state.material = mat;
-    if(mat==='none'){
-      state.thickness_mm = 0;
-      el('thick-unit').textContent = 'mm';
-    } else {
-      el('thick-unit').textContent = mat==='al' ? 'mm Al' : 'mm Cu';
-    }
+    el('thick-unit').textContent = mat==='al' ? 'mm Al' : 'mm Cu';
     applyMaterialSteps();
     setStepperValue('thick');
     updateSceneFromState();
