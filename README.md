@@ -127,9 +127,9 @@ Reproduce numéricamente las mediciones de kerma en aire que se obtienen en sala
 > 1. Confirmar **kVp** (default 70) y **mAs** (default 10) con los botones ±.
 > 2. 2. Ajustar **DFD**, **altura del detector** sobre el plumavit y **colimación** del haz.
 >    3. 3. Elegir el **detector** (NE 2571 o AGMS-D). La escena 3D cambia su geometría.
->       4. 4. Tomar la lectura **sin atenuador** (I₀): clic en EXPONER.
+>       4. 4. Tomar la lectura de referencia **I₀** con **Al 0.0 mm** (equivale a "sin atenuador"): clic en EXPONER.
 >          5. 5. Tras la primera exposición, todos los controles quedan **bloqueados** salvo el espesor del atenuador.
->             6. 6. Seleccionar Al o Cu, ir incrementando el espesor con los botones ±, y exponer en cada espesor.
+>             6. 6. Subir el espesor con los botones ± y exponer en cada espesor. Si quiere usar **Cu** en lugar de Al, pulse LIMPIAR antes de empezar y seleccione Cu en el segmentado de material.
 >                7. 7. La columna kerma (μGy) se llena con cada disparo. Hasta **30 disparos** por sesión.
 >                   8. 8. LIMPIAR para resetear contador y desbloquear los controles.
 >                     
