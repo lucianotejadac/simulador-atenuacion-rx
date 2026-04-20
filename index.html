@@ -1020,7 +1020,7 @@ piso electrónico del 0.5 %.
         <button class="btn secondary" id="btn-clear">limpiar</button>
       </div>
       <div style="margin-top:8px; font-size:10px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.1em; text-align:center">
-        disparos · <span id="shots-counter" style="color:var(--accent); font-variant-numeric:tabular-nums">0</span> / 30
+        disparos · <span id="shots-counter" style="color:var(--accent); font-variant-numeric:tabular-nums">0</span>
       </div>
       <div style="margin-top:10px">
         <div class="readout" id="readout">
@@ -2047,7 +2047,7 @@ animate();
    ============================================================ */
 function el(id){return document.getElementById(id)}
 
-const MAX_SHOTS = 30;
+// const MAX_SHOTS = 30;  // disparos ilimitados
 
 const STEPS = {
   kvp:  { values: Array.from({length:22}, (_,i)=>45+i*5),
@@ -2161,9 +2161,8 @@ document.querySelectorAll('#mat-seg button').forEach(btn => {
 function updateLockState(){
   const n = state.measurements.length;
   document.body.classList.toggle('locked', n > 0);
-  const reached = n >= MAX_SHOTS;
-  el('btn-expose').disabled = reached;
-  el('btn-expose').textContent = reached ? 'límite alcanzado' : 'exponer';
+  el('btn-expose').disabled = false;
+  el('btn-expose').textContent = 'exponer';
   el('shots-counter').textContent = n;
 }
 
@@ -2171,7 +2170,6 @@ function updateLockState(){
    EXPOSICIÓN
    ============================================================ */
 el('btn-expose').addEventListener('click', ()=>{
-  if(state.measurements.length >= MAX_SHOTS) return;
   const result = simulateMeasurement(state);
   state.measurements.push({
     idx: state.measurements.length + 1,
