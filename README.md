@@ -49,8 +49,7 @@ Reproduce numéricamente las mediciones de kerma en aire que se obtienen en sala
 >                   -   - mAs en serie radiológica R'10 (1, 1.25, 1.6, 2, 2.5, 3.2, 4, 5, 6.3, 8, 10, 12.5, 16, 20, 25, 32, 40, 50, 63, 80, 100)
 >                       -   - Espesor: 0.5 mm en Al (0–10 mm) o 0.1 mm en Cu (0–2 mm)
 >                           - - **Bloqueo automático tras la primera exposición**: sólo el espesor del atenuador puede modificarse hasta presionar LIMPIAR. Reproduce la disciplina experimental: una vez fijada la geometría y el detector, sólo se varía el filtro.
->                             - - **Límite de 30 disparos** por sesión, con contador y reset manual.
->                               - - **Registro tabular** de mediciones (#, material, espesor, kerma en μGy).
+>                             - >                               - - **Registro tabular** de mediciones (#, material, espesor, kerma en μGy).
 >                                 - - **Ruido estadístico gaussiano** en cada lectura ($\sigma \sim \sqrt{N}$ + piso electrónico 0.5 %).
 >                                  
 >                                   - ---
@@ -130,7 +129,7 @@ Reproduce numéricamente las mediciones de kerma en aire que se obtienen en sala
 >       4. 4. Tomar la lectura de referencia **I₀** con **Al 0.0 mm** (equivale a "sin atenuador"): clic en EXPONER.
 >          5. 5. Tras la primera exposición, todos los controles quedan **bloqueados** salvo el espesor del atenuador.
 >             6. 6. Subir el espesor con los botones ± y exponer en cada espesor. Si quiere usar **Cu** en lugar de Al, pulse LIMPIAR antes de empezar y seleccione Cu en el segmentado de material.
->                7. 7. La columna kerma (μGy) se llena con cada disparo. Hasta **30 disparos** por sesión.
+>                7. 7. La columna kerma (μGy) se llena con cada disparo.
 >                   8. 8. LIMPIAR para resetear contador y desbloquear los controles.
 >                     
 >                      9. > Los HVL₁, HVL₂, Iₕ y la energía efectiva se calculan **fuera del simulador**, en el informe de el/la estudiante, a partir de la tabla de mediciones (escala semi-log y ecuaciones del práctico).
